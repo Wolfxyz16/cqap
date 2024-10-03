@@ -4,7 +4,7 @@
 #include <time.h>
 #include <omp.h>
 #include <string.h>
-#include "qap.h"
+#include "../include/qap.h"
 
 void swap(int *a, int *b) {
     int temp = *a;

@@ -1,7 +1,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include "qap.h"
+#include "../include/qap.h"
 
 // busqueda local, funcion de vecindario y criterio de seleccion
 // recibe una solucion y devuelve una matriz con las soluciones vecinas

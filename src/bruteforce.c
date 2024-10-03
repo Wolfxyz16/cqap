@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
-#include "qap.h"
+#include "../include/qap.h"
 
 int factorial(int n)
 {

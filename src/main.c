@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
-#include "qap.h"
-#include "bruteforce.h"
-#include "localsearch.h"
+#include "../include/qap.h"
+#include "../include/bruteforce.h"
+#include "../include/localsearch.h"
 
 int main(int argc, char *argv[])
 { 
