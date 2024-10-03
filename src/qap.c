@@ -45,7 +45,7 @@ void print_qap(Qap *qap)
 void read_qap(Qap **qap)
 {
   int i, n;
-  FILE *file = fopen("./datos/tai20a.dat", "r");
+  FILE *file = fopen("../data/tai20a.dat", "r");
   char buffer[128];
 
   if (file == NULL) {
