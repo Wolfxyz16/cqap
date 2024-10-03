@@ -1,11 +1,18 @@
-CFLAGS = -ftree-parallelize-loops=4 -std=c23 -O2 -march=native
-CC = gcc
+NAME := cqap
+STD := -std=c23
+CFLAGS := -ftree-parallelize-loops=4 -O2 -march=native
+CC := gcc
+SRC := $(wildcard src/*.c)
+OBJS := $(patsubst %.c, %.o, $(SRC))
 
-all: final
+BIN_DIR := bin
+BUILD_DIR := build
 
-final: main.o qap.o bruteforce.o localsearch.o
+all: $(NAME)
+
+$(NAME): $(OBJS)
 	@echo "Linking..."
-	$(CC) $(CFLAGS) main.o qap.o bruteforce.o localsearch.o -o qap
+	$(CC) $(CFLAGS) $(STD) -o $(BIN_DIR)/qap $(OBJS)
 
 main.o: main.c
 	@echo "Compiling main.c"
@@ -25,8 +32,8 @@ localsearch.o: localsearch.c
 
 clean:
 	@echo "Cleaning ALL"
-	rm main.o qap.o bruteforce.o localsearch.o
+	rm build/$(OBJS)
 
 openmp:
 	@echo "Compiling using openmp"
-	$(CC) -std=c23 -o qap_openmp -fopenmp qap.c main.c bruteforce.c localsearch.c
+	$(CC) $(STD) -o $(BIN_DIR)/qap_openmp -fopenmp $(SRC)
